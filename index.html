@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- keeping protocol while I develop locally -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<div class="todo-list center todo-list-container">
+			<div class="task-input-wrapper center">
+				<label for="task-input" class="label">
+					<input id="task-input" class="input js-task-input center" type="text">
+				</label>
+				<button class="button js-add-task">Add</button>
+			</div>
+			<ul id="task-list" class="task-list center">
+				<!--
+				<li>
+					<label for="task-checkbox-0" class="checkbox-label">
+						<input class="checkbox js-checkbox" id="task-checkbox-0" type="checkbox">
+						<span class="icon-checkmark"></span>
+					</label>
+					<span>Do something</span>
+				</li>
+				-->
+			</ul>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.min.js"></script>
+		<script id="tasks" type="text/x-handlebars-template">
+			{{#each this}}
+				<li>
+					<label for="{{@index}}" class="checkbox-label">
+						<input class="checkbox js-checkbox" id="{{@index}}" type="checkbox">
+						<span class="icon-checkmark"></span>
+					</label>
+					<span>{{this}}</span>
+				</li>
+			{{/each}}
+		</script>
+		<script type="text/javascript" src="assets/js/index.js"></script>
+	</body>
+</html>
