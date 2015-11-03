@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .todo-container {
+            width:400px;
+            min-height: 300px;
+            margin:auto;
+            padding-top: 20px;
+            background-color:#F4F4F4;
+        }
+
+        .form-inline {
+            margin: auto;
+            width: 57%;
+            margin-bottom: 20px;
+        }
+
+        .todo-list {
+            text-align: center;
+        }
+
+        .cust-check {
+            width:30px;
+            height: 30px;
+            border: solid black 1px;
+            font-size: 20px;
+        }
+
+        .todo-item {
+            width: 57%;
+            margin: auto;
+            border-top: 1px solid #E1E1E1;
+            border-bottom: 1px solid #E1E1E1;
+            overflow: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .col-md-4 {
+            font-size: 20px;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div class="todo-container">
+       <div class="form-inline">
+           <div class="form-group">
+               <input type="text" class="form-control" id="todo">
+           </div>
+           <button type="button" class="btn btn-default">Add</button>
+       </div>
+       <div class="row todo-list">
+            <div class="col-md-12">What do you have to do today?</div>
+       </div>
+   </div>
+
+   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script>
+       $(function(){
+
+           var todos = [];
+
+           $(".form-control").keypress(function() {
+               $(".btn").css('background-color', '#00CD79')
+           });
+
+           $(".btn").click(function(){
+               populateList();
+           });
+
+           var populateList = function() {
+               var todo = $(".form-control").val();
+               if(todo != '') {
+                   $(".form-control").val('');
+                   todos.push(todo);
+                   listTodos();
+                   $(".btn").css('background-color', '#FFF')
+               }
+
+           }
+
+           $('.form-control').keypress(function(e) {
+               if (e.which == 13) {
+                   populateList();
+               }
+           });
+
+           listTodos = function() {
+               console.log(todos);
+               $(".row").html(' ');
+               todos.forEach(function(value, index){
+                   $(".row").append('<div class="todo-item"><span class="col-md-4"><div class="cust-check"></div></span><div class="col-md-4">' + todos[index] + '</div></div>');
+               });
+           };
+
+           $(document).on('mouseenter','.cust-check',function(){
+               $( this ).append( '<i class="fa fa-check"></i>' );
+           });
+
+           $(document).on('click','.cust-check',function(){
+               var index = $( ".cust-check" ).index( this );
+               todos.splice(index, 1);
+               //$( this ).parentsUntil('.row').remove();
+               listTodos();
+               if(todos.length == 0) {
+                   $(".row").append(' <div class="col-md-12">What do you have to do today?</div>');
+
+               }
+
+           });
+
+           $(document).on('mouseleave','.cust-check',function(){
+               $( this ).empty();
+           });
+       });
+   </script>
+</body>
+
+
+
+</html>
