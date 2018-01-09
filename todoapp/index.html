@@ -1,0 +1,49 @@
+<!-- INFO
+    I know there are many ways to complete this project. Some more complex than others.
+    I think I took a pretty simple approach to this but I hope it gives you an idea of my work.
+
+    I also did this test recently in angular for Union: https://github.com/bfrable/memorygame
+
+    For what its worth, Union did get back to me yesterday with an offer but I'm pretty eager to see if things will work out with Duke.
+
+    Thanks for your time yesterday. I really enjoyed meeting you and the team.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bretts Todo App</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+</head>
+
+<body data-ng-app="todoApp">
+<div class="container" data-ng-controller="TodoController">
+    <section class="app-body">
+        <form data-ng-submit="todoText.length ? addTodo() : return" class="todo-form">
+            <input type="text" data-ng-change="change()" data-ng-model="todoText" placeholder="Enter a new task" class="todo-form__input"/>
+            <input type="submit" value="Add Task" class="todo-form__submit btn" data-ng-class="(todoText.length) ? 'btn--enabled' : 'btn--disabled'"/>
+        </form>
+
+        <p class="app-intro" data-ng-if="!todos.length">What do you have to do today?</p>
+
+        <ul class="todo-items">
+            <li data-ng-repeat="todo in todos track by $index" data-ng-click="remove()" class="todo-items__item">
+                <input type="checkbox" data-ng-model="todo.done" class="todo-items__checkbox" id="{{todo.id}}">
+                <label for="{{todo.id}}">{{ todo.text }}</label>
+            </li>
+        </ul>
+
+        <span class="clear-all" data-ng-if="todos.length" data-ng-click="clearAll()">Clear All Todos</span>
+    </section>
+</div>
+<script src="public/js/app.js"></script>
+</body>
+</html>
