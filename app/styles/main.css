@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.content {
+  background: #F4F4F4;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.2);
+  padding: 30px 20px 20px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.task-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #EEEEEE;
+  border: 1px solid #c9c9c9;
+  color: black;
+}
+
+.submit-button:enabled {
+  background-color: #1FCE6D;
+  color: white;
+}
+
+.tasks {
+  padding: 0 20px 20px;
+}
+
+.tasks li {
+  border-top: 1px solid #c9c9c9;
+  display: inline-block;
+  padding: 5px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.tasks li:last-child {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Custom checkbox CSS */
+.checkbox-custom {
+  display: none;
+}
+
+.checkbox-custom-label {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: #fff;    
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 0px 0px #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:hover + .checkbox-custom-label:after {
+    content: "";
+    padding: 3px;
+    text-align: center;
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    border: solid #E67E21;
+    border-width: 0 8px 8px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    top: 2px;
+    left: 10px;
+}

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+    <form ng-submit="addTask(task)" name="toDoForm">
+      <input ng-model="task" class="task-input" type="text" name="task" required>
+      <input type="submit" class="submit-button" value="Add" ng-disabled="toDoForm.$invalid">
+    </form>
+    <p class="italic" ng-show="tasks.length === 0">What do you have to do today?</p>
+    <ul class="tasks">
+        <li ng-repeat="t in tasks track by $index">
+            <input type="checkbox" class="checkbox-custom" id="{{t.id}}" name="{{t.id}}" ng-click="removeTask(t.id)">
+            <label for="{{t.id}}" class="checkbox-custom-label">{{ t.text }}</label>
+        </li>
+    </ul>
+  </div>
+</div>
