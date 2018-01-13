@@ -21,11 +21,6 @@ todoApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'partials/home.html',
       controller: 'HomeCtrl'
     })
-    .state('login', {
-      url: '/login',
-      templateUrl: 'partials/login.html',
-      controller: 'LoginCtrl'
-    })
     .state('todos', {
       url: '/todos',
       templateUrl: 'partials/todos.html',

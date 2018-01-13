@@ -1,7 +1,11 @@
 (function() {
-  todoApp.controller('SignoutCtrl', signoutCtrl);
+  todoApp.controller('SignoutCtrl', ['$state', function ($state) {
 
-  function signoutCtrl () {
-    firebase.auth().signOut()
-  }
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        firebase.auth().signOut()
+        $state.go('home', {}, { reload: 'home' });
+      }
+    });
+  }]);
 }());
