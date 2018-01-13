@@ -1,5 +1,5 @@
 <p ng-if="name">Welcome {{ name }}</p>
-<a href="/#/signout">Signout</a>
+<a href="#/signout">Signout</a>
 
 <form data-ng-submit="todoText.length ? addTodo(uid) : return" class="todo-form">
     <input type="text" data-ng-change="change()" data-ng-model="todoText" placeholder="Enter a new task" class="todo-form__input"/>
