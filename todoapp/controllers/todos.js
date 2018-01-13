@@ -39,5 +39,14 @@
       });
     };
 
+    $scope.deleteAllTodos = function() {
+      firebase.database().ref($scope.uid).once('value', function(snapshot) {
+        if (snapshot.hasChild('todos')) {
+          $scope.ref.child('todos').remove();
+          getTodos($scope.uid);
+        }
+      });
+    };
+
   }]);
 }());
