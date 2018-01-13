@@ -42,7 +42,7 @@
     $scope.deleteAll = function() {
       firebase.database().ref($scope.uid).once('value', function(snapshot) {
         if (snapshot.hasChild('todos')) {
-          $scope.ref.child('todos').remove();
+          $scope.ref.remove();
           getTodos($scope.uid);
         }
       });
