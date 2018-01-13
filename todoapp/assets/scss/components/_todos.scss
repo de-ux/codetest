@@ -1,0 +1,68 @@
+.todo-items {
+  &__item {
+    @include transition(all .2s ease);
+    border-top: 1px solid #aeaeae;
+    display: inline-block;
+    padding: 5px 0;
+    text-align: left;
+    width: 100%;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    label {
+      cursor: pointer;
+      padding: 5px 0 0 25px;
+    }
+  }
+
+  &:hover {
+    .todo-items__item {
+      opacity: 0.5;
+    }
+    .todo-items__item--active {
+      opacity: 1;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox + label {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__checkbox + label:before {
+    @include transition(all .2s ease);
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    border-radius: 3px;
+    content: "";
+    display: block;
+    left:0;
+    padding: 9px;
+    position: absolute;
+    top: 0;
+  }
+
+  &__checkbox:checked + label:before, &__checkbox:hover + label:before {
+    border: 1px solid #E47E30;
+    color: #99a1a7;
+  }
+
+  &__checkbox:checked + label:after, &__checkbox:hover + label:after {
+    color: #E47E30;
+    content: '\2714';
+    font-size: 14px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+  }
+}

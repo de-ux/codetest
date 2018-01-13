@@ -1,0 +1,22 @@
+.todo-form {
+  display: flex;
+  margin: 20px 0;
+  padding: 10px 0 20px;
+  text-align: center;
+
+  &__input, &__submit {
+    border: 1px solid #999999;
+    padding: 0 10px;
+  }
+
+  &__input {
+    height: 34px;
+    margin: 0 10px 0 0;
+    width: 70%;
+  }
+
+  &__submit {
+    height: 36px;
+    width: 30%;
+  }
+}
