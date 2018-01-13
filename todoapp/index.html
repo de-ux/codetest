@@ -1,14 +1,3 @@
-<!-- INFO
-    I know there are many ways to complete this project. Some more complex than others.
-    I think I took a pretty simple approach to this but I hope it gives you an idea of my work.
-
-    I also did this test recently in angular for Union: https://github.com/bfrable/memorygame
-
-    For what its worth, Union did get back to me yesterday with an offer but I'm pretty eager to see if things will work out with Duke.
-
-    Thanks for your time yesterday. I really enjoyed meeting you and the team.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,30 +9,28 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
 </head>
 
-<body data-ng-app="todoApp">
-<div class="container" data-ng-controller="TodoController">
+<body ng-app="todoApp">
+
+<div class="container">
     <section class="app-body">
-        <form data-ng-submit="todoText.length ? addTodo() : return" class="todo-form">
-            <input type="text" data-ng-change="change()" data-ng-model="todoText" placeholder="Enter a new task" class="todo-form__input"/>
-            <input type="submit" value="Add Task" class="todo-form__submit btn" data-ng-class="(todoText.length) ? 'btn--enabled' : 'btn--disabled'"/>
-        </form>
-
-        <p class="app-intro" data-ng-if="!todos.length">What do you have to do today?</p>
-
-        <ul class="todo-items">
-            <li data-ng-repeat="todo in todos track by $index" data-ng-click="remove()" class="todo-items__item">
-                <input type="checkbox" data-ng-model="todo.done" class="todo-items__checkbox" id="{{todo.id}}">
-                <label for="{{todo.id}}">{{ todo.text }}</label>
-            </li>
-        </ul>
-
-        <span class="clear-all" data-ng-if="todos.length" data-ng-click="clearAll()">Clear All Todos</span>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Duke Energy" />
+        </div>
+        <ui-view></ui-view>
     </section>
 </div>
-<script src="public/js/app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+<script src="app.js"></script>
+<script src="public/js/controllers.js"></script>
+
 </body>
 </html>

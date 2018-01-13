@@ -1,0 +1,20 @@
+<p ng-if="name">Welcome {{ name }}</p>
+<a href="#signout">Signout</a>
+
+<form data-ng-submit="todoText.length ? addTodo(uid) : return" class="todo-form">
+    <input type="text" data-ng-change="change()" data-ng-model="todoText" placeholder="Enter a new task" class="todo-form__input"/>
+    <input type="submit" value="Add Task" class="todo-form__submit btn" data-ng-class="(todoText.length) ? 'btn--enabled' : 'btn--disabled'"/>
+</form>
+
+<p class="app-intro" data-ng-if="!todos">What do you have to do today?</p>
+
+<ul class="todo-items">
+    <li data-ng-repeat="(key, todo) in todos" class="todo-items__item">
+        <div ng-repeat="val in todo">
+            <input type="checkbox" id="{{key}}" data-ng-click="deleteTodo(key)" class="todo-items__checkbox">
+            <label for="{{key}}" data-ng-click="deleteTodo(key)">{{ val.todo }}</label>
+        </div>
+    </li>
+</ul>
+
+<span class="clear-all" data-ng-if="todos" data-ng-click="clearAll()">Clear All Todos</span>

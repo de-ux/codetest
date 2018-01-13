@@ -1,0 +1,11 @@
+.btn {
+  @include transition(all .2s ease);
+  background: #DEDEDE;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 12px;
+  &--enabled {
+    background: #2ECC71;
+    color: #FFFFFF;
+  }
+}
