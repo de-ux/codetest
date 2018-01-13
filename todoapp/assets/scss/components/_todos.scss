@@ -1,5 +1,6 @@
 .todo-items {
   &__item {
+    @include transition(all .2s ease);
     border-top: 1px solid #aeaeae;
     display: inline-block;
     padding: 5px 0;
@@ -13,6 +14,15 @@
     label {
       cursor: pointer;
       padding: 5px 0 0 25px;
+    }
+  }
+
+  &:hover {
+    .todo-items__item {
+      opacity: 0.5;
+    }
+    .todo-items__item--active {
+      opacity: 1;
     }
   }
 

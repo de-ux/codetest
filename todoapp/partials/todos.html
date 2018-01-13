@@ -9,7 +9,7 @@
 <p class="app-intro" data-ng-if="!todos">What do you have to do today?</p>
 
 <ul class="todo-items">
-    <li data-ng-repeat="(key, todo) in todos" class="todo-items__item">
+    <li data-ng-repeat="(key, todo) in todos" class="todo-items__item" ng-class="{'todo-items__item--active': hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
         <div ng-repeat="val in todo">
             <input type="checkbox" id="{{key}}" data-ng-click="deleteTodo(key)" class="todo-items__checkbox">
             <label for="{{key}}" data-ng-click="deleteTodo(key)">{{ val.todo }}</label>
