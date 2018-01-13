@@ -3,7 +3,7 @@
 
   function loginCtrl () {
     var uiConfig = {
-      signInSuccessUrl: '/#/todos',
+      signInSuccessUrl: '#/todos',
       signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.PhoneAuthProvider.PROVIDER_ID
