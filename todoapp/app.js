@@ -18,7 +18,8 @@ todoApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'partials/home.html'
+      templateUrl: 'partials/home.html',
+      controller: 'HomeCtrl'
     })
     .state('login', {
       url: '/login',
@@ -36,4 +37,3 @@ todoApp.config(function($stateProvider, $urlRouterProvider) {
       controller: 'SignoutCtrl'
     });
 });
-
