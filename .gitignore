@@ -1,0 +1,5 @@
+jQueryVersion/node_modules
+VueJSVersion/node_modules
+.DS_Store
+jQueryVersion/dist
+VueJSVersion/dist
