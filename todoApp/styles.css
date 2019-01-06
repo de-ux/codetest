@@ -1,0 +1,64 @@
+:root {
+    --mainFont: Arial, Helvetica, sans-serif;
+    --textColor: #333;
+    --white: #fff;
+}
+
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--textColor);
+    display: flex;
+    justify-content: center;
+    font-family: var(--mainFont);
+}
+
+#list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+
+    width: 400px;
+    min-height: 300px;
+    margin: auto;
+
+    border-radius: 5px;
+    background: #f4f4f4;
+    -webkit-box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
+    -moz-box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
+    box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
+}
+
+form {
+    padding: 2.5em 0 1.5em 0;
+}
+
+input {
+    border: .1em solid lightgray;
+    background-color: var(--white);
+    font-size: 1em;
+    padding: 1em;
+}
+
+button {
+    color: #000;
+    border: .1em solid lightgray;
+    background-color: #eee;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.question-text {
+    font-size: 1.2em;
+    font-style: italic;
+}
