@@ -14,7 +14,7 @@
     <main>
         <section id="list-wrapper" aria-label="Todo List Application">
             <form>
-                <input type="text" aria-label="Write a new to do item" size="28" onkeydown="eventHandlers.ableSubmitBtn()">
+                <input id="todo-input" type="text" aria-label="Write a new to do item" size="28" onkeyup="eventHandlers.ableSubmitBtn()">
                 <button id="submit-btn" type="submit" disabled>Add</button>
             </form>
             <div>

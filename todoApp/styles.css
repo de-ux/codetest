@@ -51,11 +51,18 @@ input {
 }
 
 button {
-    color: #000;
+    color: var(--white);
     border: .1em solid lightgray;
-    background-color: #eee;
+    background-color: #1fce6d;
     font-size: 1em;
     padding: 1em;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #eee;
+    color: var(--textColor);
 }
 
 .question-text {
