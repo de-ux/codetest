@@ -13,13 +13,16 @@
 <body>
     <main>
         <section id="list-wrapper" aria-label="Todo List Application">
-            <form>
-                <input id="todo-input" type="text" aria-label="Write a new to do item" size="28" onkeyup="eventHandlers.ableSubmitBtn()">
-                <button id="submit-btn" type="submit" disabled>Add</button>
+            <form onsubmit="return false">
+                <input id="todoInput" type="text" aria-label="Write a new to do item" size="28" onkeyup="eventHandlers.toggleSubmitBtn()">
+                <button id="submitBtn" type="submit" disabled onclick="eventHandlers.addTodoItem()">Add</button>
             </form>
             <div>
-                <p class="question-text">What do you have to do today?</p>
+                <p class="questionText">What do you have to do today?</p>
             </div>
+            <ul>
+
+            </ul>
         </section>
     </main>
 </body>
