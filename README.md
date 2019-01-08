@@ -30,3 +30,6 @@ To get started:
 2. Create a new folder for your stuff
 3. Do your work
 4. Submit a Pull Request when you're ready
+
+//Resources
+
