@@ -2,9 +2,11 @@
     --mainFont: Arial, Helvetica, sans-serif;
     --textColor: #333;
     --white: #fff;
+    --lightGray: #ccc;
 }
 
 html {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     min-height: 100%;
 }
@@ -12,20 +14,36 @@ html {
 *,
 *:before,
 *:after {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
 
 body {
-    color: var(--textColor);
-    display: flex;
-    justify-content: center;
     font-family: var(--mainFont);
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    color: var(--textColor);
+
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
 }
 
 #list-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    align-self: center;
 
     width: 400px;
     min-height: 300px;
@@ -34,39 +52,54 @@ body {
     border-radius: 5px;
     background: #f4f4f4;
     -webkit-box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
-    -moz-box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
     box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
+
+    -ms-flex-item-align: center;
+
+    align-self: center;
 }
 
 form {
     padding: 2.5em 0 1.5em 0;
+
     text-align: center;
 }
 
 div>p {
+    font-weight: 400;
+    font-style: italic;
+
     text-align: center;
 }
 
 input {
+    font-size: 1.5em;
+    font-weight: medium;
+
+    padding: .5em;
+
+    color: #000;
     border: .1em solid lightgray;
     background-color: var(--white);
-    font-size: 1em;
-    padding: 1em;
 }
 
 button {
+    font-size: 1.5em;
+
+    padding: .5em;
+
+    cursor: pointer;
+
     color: var(--white);
     border: .1em solid lightgray;
     background-color: #1fce6d;
-    font-size: 1em;
-    padding: 1em;
-    cursor: pointer;
 }
 
 button:disabled {
     cursor: not-allowed;
-    background-color: #eee;
+
     color: var(--textColor);
+    background-color: #eee;
 }
 
 #question-text {
@@ -75,17 +108,36 @@ button:disabled {
 }
 
 li {
-    list-style-type: none;
-    color: #555;
     font-size: 1.5em;
+
+    list-style-type: none;
+
+    color: #555;
 }
 
-input[type="checkbox"]+label {
+ul {
+    margin: 0 auto;
+    padding: 0 2em 2em 2em;
+}
+
+hr {
+    height: 1px;
+
+    border: none;
+    background-color: #ccc;
+}
+
+input[type='checkbox']+label {
     font-size: 1.5em;
+
+    -ms-flex-item-align: left;
+
+    -ms-grid-row-align: left;
+
     align-self: left;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
     opacity: 0;
 }
 
@@ -93,50 +145,67 @@ label {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked+label {
+input[type='checkbox']:checked+label {
     color: deepPink;
 }
 
-input[type="checkbox"]+label span {
+input[type='checkbox']+label span {
     display: inline-block;
-    vertical-align: middle;
+
     width: 35px;
     height: 35px;
+
+    vertical-align: middle;
+
     border: 2px solid #ccc;
     background: #f4f4f4;
 }
 
-input[type="checkbox"]:hover+label span {
+input[type='checkbox']:hover+label span {
     background-color: #fff;
 }
 
-input[type="checkbox"]+label span::before {
-    content: "";
+input[type='checkbox']+label span::before {
     display: block;
+
+    content: '';
 }
 
-input[type="radio"]+label span {
+input[type='radio']+label span {
     border-radius: 0;
 }
 
-input[type="checkbox"]:hover+label span::before {
-    content: "";
-    height: 16px;
+input[type='checkbox']:hover+label span::before {
     width: 30px;
-    border-left: 6px solid;
-    border-bottom: 6px solid;
+    height: 16px;
     margin-top: .1em;
+
+    content: '';
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    color: #e67e21;
     text-align: center;
+
+    color: #e67e21;
+    border-bottom: 6px solid;
+    border-left: 6px solid;
 }
+
+.checkbox input[type='checkbox']:focus+label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+/* I know that !important is bad form typically.  However, I am using this code from Heydon Pickering to help with accessiblity issue of reading a hidden element. */
 
 .vh {
     position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0 !important;
-    border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
+
     overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+
+    border: 0 !important;
 }

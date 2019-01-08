@@ -11,23 +11,20 @@
 </head>
 
 <body>
-    <main id="list-wrapper" aria-label="Todo List Application">
+    <main role="main" id="list-wrapper" aria-label="Todo List Application">
         <form onsubmit="return false">
-            <label for="add" class="vh">
+            <label for="addingTodo" class="vh">
                 Write a new todo item
             </label>
-            <input id="todoInput" type="text" aria-label="Write a new to do item" size="28" onkeyup="eventHandlers.toggleSubmitBtn()"
-                autocomplete="off">
-            <button id="submitBtn" type="submit" disabled onclick="eventHandlers.addTodoItem()">Add</button>
+            <div class="checkbox">
+                <input id="todoInput" type="text" aria-label="Write a new to do item" size="20" onkeyup="eventHandlers.toggleSubmitBtn()"
+                    autocomplete="off">
+                <button id="submitBtn" type="submit" disabled onclick="eventHandlers.addTodoItem()">Add</button>
+            </div>
         </form>
-        <div role="status" aria-live="polite" class="vh">
-            <!-- add content to hear it spoken -->
-        </div>
-        <!-- Can we add a status message so that the list item added is announced? -->
         <div>
             <p id="questionText">What do you have to do today?</p>
             <ul>
-
             </ul>
         </div>
     </main>

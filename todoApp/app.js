@@ -48,19 +48,11 @@ var view = {
 
         todoList.todos.forEach(function (todo, position) {
             let todoLi = document.createElement('li');
-            let checkbox = document.createElement('input')
             let todoTextComplete = '';
-
-            if (todo.completed === true) {
-                todoTextComplete = '[x] ' + todo.todoText;
-            } else {
-                todoTextComplete = todo.todoText;
-            }
 
             todoLi.id = position;
             todoLi.textContent = todoTextComplete;
-            todoLi.appendChild(checkbox);
-            todoLi.innerHTML = '<input type="checkbox" id="check" class="delete" onClick="eventHandlers.deleteTodoItem()" /><label for="check"><span></span></label>' + todo.todoText;
+            todoLi.innerHTML = '<hr><input type="checkbox" id="check" class="delete" onClick="eventHandlers.deleteTodoItem()" /><label for="check"><span></span></label>' + '&nbsp' + todo.todoText;
             todosUl.appendChild(todoLi);
         });
     },
