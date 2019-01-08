@@ -35,6 +35,8 @@ let eventHandlers = {
     deleteTodoItem: function (position) {
         todoList.deleteTodoItem(position);
         view.displayTodos();
+        var question = document.getElementById("questionText");
+        question.removeAttribute("hidden", true);
     }
 };
 
