@@ -6,6 +6,9 @@ let todoList = {
             todoText: todoText,
             completed: false
         });
+    },
+    deleteTodoItem: function (position) {
+        this.todos.splice(position, 1);
     }
 };
 
@@ -29,6 +32,10 @@ let eventHandlers = {
         var question = document.getElementById("questionText");
         question.setAttribute("hidden", true);
     },
+    deleteTodoItem: function (position) {
+        todoList.deleteTodoItem(position);
+        view.displayTodos();
+    }
 };
 
 //object to show users the todo list view in the DOM
@@ -51,8 +58,13 @@ var view = {
             todoLi.id = position;
             todoLi.textContent = todoTextComplete;
             todoLi.appendChild(checkbox);
-            todoLi.innerHTML = '<input type="checkbox" id="check"/><label for="check"><span></span>      todo.todoText</label>';
+            todoLi.innerHTML = '<input type="checkbox" id="check" class="delete" onClick="eventHandlers.deleteTodoItem()" /><label for="check"><span></span></label>' + todo.todoText;
             todosUl.appendChild(todoLi);
         });
+    },
+    eventListeners: function () {
+        if (elementClicked.className === 'delete') {
+            handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+        }
     }
 }
