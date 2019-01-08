@@ -22,17 +22,13 @@ body {
     font-family: var(--mainFont);
 
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
 
     color: var(--textColor);
 
     -webkit-box-pack: center;
-
     -ms-flex-pack: center;
-
     justify-content: center;
 }
 
@@ -55,7 +51,6 @@ body {
     box-shadow: 11px 12px 6px -11px rgba(0, 0, 0, .36);
 
     -ms-flex-item-align: center;
-
     align-self: center;
 }
 
@@ -131,9 +126,7 @@ input[type='checkbox']+label {
     font-size: 1.5em;
 
     -ms-flex-item-align: left;
-
     -ms-grid-row-align: left;
-
     align-self: left;
 }
 
@@ -169,10 +162,6 @@ input[type='checkbox']+label span::before {
     display: block;
 
     content: '';
-}
-
-input[type='radio']+label span {
-    border-radius: 0;
 }
 
 input[type='checkbox']:hover+label span::before {

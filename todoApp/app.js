@@ -4,7 +4,6 @@ let todoList = {
     addTodoItem: function (todoText) {
         this.todos.push({
             todoText: todoText,
-            completed: false
         });
     },
     deleteTodoItem: function (position) {
@@ -48,10 +47,8 @@ var view = {
 
         todoList.todos.forEach(function (todo, position) {
             let todoLi = document.createElement('li');
-            let todoTextComplete = '';
 
             todoLi.id = position;
-            todoLi.textContent = todoTextComplete;
             todoLi.innerHTML = '<hr><input type="checkbox" id="check" class="delete" onClick="eventHandlers.deleteTodoItem()" /><label for="check"><span></span></label>' + '&nbsp' + todo.todoText;
             todosUl.appendChild(todoLi);
         });
