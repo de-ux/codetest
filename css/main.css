@@ -1,0 +1,169 @@
+/* Notes
+    Outline: none; has been used several times to maintain consistancy with
+    mock ups but will hinder usability for keyboard only users. Business should
+    weight in on the decision to keep or remove this element highlight 'style' */
+/* Potential improvements and expansions
+    Create style that prevents overflow of extremely long TODO entry */
+
+/******************
+*** FORM STYLES ***
+******************/
+form {
+    display: block;
+    margin: 0 auto;
+    align-content: center;
+    max-width: 400px;
+    width: 100%;
+    min-height: 300px;
+    border: 1px #ccc solid;
+    background: #f4f4f4;
+    border-radius: 8px;
+    color: #000;
+    box-shadow: 
+        5px 5px 6px #e8e8e8,
+        -3px -3px 3px #fbfbfb;
+    overflow: hidden;
+}
+
+legend {
+    display: none;
+}
+
+fieldset {
+    margin: 40px auto 0px;
+    width: 82.0025%;
+    border: 0;
+}
+
+input[type=text] {
+    font: 18px Arial, Helvetica, sans-serif;
+    width: 82.0025%;
+    height: 34px;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.todo-button {
+    border: 1px solid #ccc;
+    padding: 9px;
+    margin: 0;
+    background: #eee;
+    font: 16px Arial, Helvetica, sans-serif;
+    color: #000;
+    outline: none;
+}
+
+    .todo-button--active {
+        background: #2ecc71;
+        color: #fff;
+        outline: none;
+    }
+
+.user-prompt-text {
+    margin-top: 24px;
+    font: 16px Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-style: italic;
+}
+
+.todos {
+    margin: 18px 0px 26px;
+}
+
+.todo-text{
+    margin-left: 10px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.checkmark {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+/************************
+*** TO DO LIST STYLES ***
+************************/
+.container {
+    display: block;
+    position: relative;
+    box-shadow: 
+        0px -1px 0px #fff,
+        0px -2px 0px #ccc,
+        0px 1px 0px #ccc,
+        0px 2px 0px #fff;
+    width: 72%;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    height: 50px;
+    align-content: center;
+    padding-left: 35px;
+    font-size: 22px;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 0px #c9c9c9;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.container input:hover ~ .checkmark{
+    cursor: pointer;
+}
+
+.todo-text:hover {
+    cursor: pointer;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:hover ~ .checkmark:after,
+.container input:focus ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    cursor: pointer;
+    left: 7px;
+    top: -1px;
+    width: 10px;
+    height: 20px;
+    border: solid #e47e30;
+    border-width: 0 6px 6px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/********************
+*** MEDIA QUERIES ***
+********************/
+@media screen and (max-width: 399px) {
+    .todo-button {
+        margin: 10px auto 0;
+        width: 100%;
+    }
+
+    input[type=text] {
+        width: 99%;
+    }
+}
