@@ -1,0 +1,169 @@
+
+/*
+    Mixins for Todo project, they would normaly go in thier own scss file, but this is a small project
+*/
+@mixin box_shadow ($level) {
+
+    @if $level == 1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    } @else if $level == 2 {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } @else if $level == 3 {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    } @else if $level == 4 {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    } @else if $level == 5 {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+}
+
+/*
+    Custom SCSS
+*/
+/* List check box and container */
+.control-group {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    width: 100%;
+  }
+  
+  .control {
+    font-size: 18px;
+    position: relative;
+    display: block;
+    margin-bottom: 14px;
+    padding-left: 48px;
+    padding-top: 10px;
+    cursor: pointer;
+
+    & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        /* Show check mark */
+        &:hover ~ .control__indicator:after {
+            display: block;
+        }
+        &:checked ~ .control__indicator:after {
+            display: block;
+        }
+
+    }
+  }
+
+  .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #c3c3c3;
+    @include box_shadow(1);
+
+    /* Check mark*/
+    &:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+  }
+  
+  .control--radio .control__indicator {
+    border-radius: 50%;
+  }
+    
+  .control--checkbox {
+
+    /* Checkbox tick */
+    & .control__indicator:after {
+        top: 0px;
+    left: 10px;
+    width: 18px;
+    height: 36px;
+    transform: rotate(45deg);
+    border: solid #e09917;
+    border-width: 0 8px 8px 0;
+    }
+  }
+
+  /*  */
+  .todo-list p {
+      margin-top: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      font-style: italic;
+  }
+  
+  
+
+/*
+    Bootstrap-v4 Reset and SCSS to match Project mockup 
+*/
+
+    .todo-container {
+        width: 400px;
+        min-height: 300px;
+        border: 1px #ddd solid;
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        margin: 25px 0px;
+        padding: 30px; 
+        @include box_shadow(1);
+
+        & input {
+          font-weight: 600;
+        }
+        & .list-group-item {
+          background-color: transparent;
+        }
+        & .form-control {
+          border-radius: 0px;
+          margin-right: 7px;
+        }
+        & .btn {
+          border-radius: 0px;
+          font-weight: 600;
+        }
+        & .btn-outline {
+          color: #000;
+          border-color: #adadad;
+  
+          &:hover {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+          }
+        }
+        & .hoverEffect {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        & .list-group-item {
+            & input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            & .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: #fff;
+            }
+            &:first-child {
+                border-top: 1px solid #c3c3c3;
+            }
+            &:last-child {
+                border-bottom: 1px solid #c3c3c3;
+            }
+        }
+      }
+  

@@ -1,0 +1,31 @@
+<section class="todo-container">
+  <section class="todo-input">
+    <div class="todo-form">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]='todoInput' (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event)" (keyup.enter)="createNewTodo()" >
+          <div class="input-group-append">
+            <button (click)="createNewTodo()" class="btn btn-outline" type="button" id="btn-submit">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="todoList" class="todo-list">
+
+      <div *ngIf="todoList.length == 0" class="row justify-content-center">
+          <p><i>What do you have to do today?</i></p>
+      </div>
+
+      <ul class="list-group list-group-flush control-group">
+        <li class="list-group-item" *ngFor="let todo of todoList, let i=index">
+          <label class="control control--checkbox">{{ todo.title }}
+            <input id="{{ i }}" (click)="deleteTodo($event)" type="checkbox"/>
+            <div class="control__indicator"></div>
+          </label>
+        </li>
+      </ul>
+    
+    
+  </section>
+</section>
