@@ -1,0 +1,151 @@
+
+#form {
+    width: 400px;
+    min-height: 300px;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    padding-top: 50px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    box-shadow: 4px 3px 5px #eeeeee;
+
+}
+
+#fieldSet {
+    border: none; 
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  
+}
+
+#text-user-enters {
+    border: 1px solid #cccccc;
+    width: 263px;
+    height: 44px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    
+}
+
+.add-todo-button {
+    font-size: 18px;
+    width: 52px;
+    height: 47px;
+    padding-top: 7px;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
+    margin-left: 2px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.add-todo-button-active {
+    background-color: #00d068;
+    color: white;
+
+}
+
+.placeholder-text {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #3d3d3d;
+
+}
+
+.label-container {
+    display: block;
+    position: relative;
+    height: 45px;
+    margin-top: 10px;
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0px 1px 0px #cccccc, 0px 2.5px 0px #f8f8f8;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+} 
+
+/* default checkbox */
+.label-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+}
+
+.check-mark-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #c9c9c9;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 0px #c9c9c9;
+    
+}
+
+
+/* Mouseover */
+.label-container:hover input ~ .check-mark-element {
+    background-color: #f8f8f8;
+    
+}
+
+/* Hidden checkbox*/
+.check-mark-element:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+}
+
+/* Checkmark on hover*/
+    .label-container input:hover ~ .check-mark-element:after {
+     display: block;
+     
+}
+
+/* Styled checkmark */  
+.label-container .check-mark-element:after {
+    left: 7px;
+    top: 0px;
+    width: 9px;
+    height: 20px;
+    border: solid 1px #e67e22;
+    border-width: 0 6px 6px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+}
+
+.individual-todo-items {
+    margin-top: 20px;
+    margin-left: 50px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
