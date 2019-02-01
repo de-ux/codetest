@@ -9,7 +9,7 @@ Ground rules:
 * You may build it using whatever you want, just make sure it looks and acts like the one in the screenshots. (Hint: you're applying for a front end developer job.)
 * There's no need to save data in a database.
 * You can look up stuff on the Google but don't ask others for help. 
-* Please make it your own, but if you "borrow" anything from another example make sure you credit it.
+* Please write your own code, but if you "borrow" anything from another example make sure you credit it.
 * Be prepared to explain and account for all bits of code.
 
 Basic functionality:
